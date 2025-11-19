@@ -17,7 +17,7 @@ public class BenutzerMapper {
     }
 
     public BenutzerDTO toDTO(Benutzer benutzer) {
-        return new BenutzerDTO(benutzer.getVorname(), benutzer.getNachname(), benutzer.getBildpfad());
+        return new BenutzerDTO(benutzer.getVorname(), benutzer.getNachname(), benutzer.getBildpfad(), benutzer.getId());
     }
 
     public Benutzer fromDTO(BenutzerDTO dto) {
@@ -25,6 +25,7 @@ public class BenutzerMapper {
         benutzer.setVorname(dto.getVorname());
         benutzer.setNachname(dto.getNachname());
         benutzer.setBildpfad(dto.getBildpfad());
+        benutzer.setId(dto.getId());
 
         return benutzer;
     }

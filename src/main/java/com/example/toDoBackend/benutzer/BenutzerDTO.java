@@ -5,14 +5,15 @@ import com.example.toDoBackend.todo.TodoDTO;
 import java.util.List;
 
 public class BenutzerDTO {
-
+    private Long id;
     private String vorname;
     private String nachname;
     private String bildpfad;
 
     public BenutzerDTO() {}
 
-    public BenutzerDTO(String vorname, String nachname, String bildpfad) {
+    public BenutzerDTO(String vorname, String nachname, String bildpfad, Long id) {
+        this.id = id;
         this.vorname = vorname;
         this.nachname = nachname;
         this.bildpfad = bildpfad;
@@ -27,4 +28,8 @@ public class BenutzerDTO {
 
     public String getBildpfad() { return bildpfad; }
     public void setBildpfad(String bildpfad) { this.bildpfad = bildpfad; }
+
+    public Long getId() {
+        return id;
+    }
 }
