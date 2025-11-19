@@ -1,0 +1,20 @@
+server:
+  port: 9000
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/mydb
+    username: admin
+    password: pwd
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: true
+
+#logging:
+#  level:
+#    root: DEBUG
