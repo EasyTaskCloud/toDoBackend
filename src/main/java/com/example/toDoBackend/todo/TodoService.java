@@ -18,4 +18,8 @@ public class TodoService {
     public List<TodoDTO> allTodos() {
         return todoRepository.findAll().stream().map(mapper::toDTO).toList();
     }
+
+    public List<TodoDTO> getTodosByUserId(Long id) {
+        return todoRepository.findByBenutzerId(id).stream().map(mapper::toDTO).toList();
+    }
 }
