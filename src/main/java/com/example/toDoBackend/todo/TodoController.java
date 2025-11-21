@@ -30,4 +30,10 @@ public class TodoController {
         todoService.deleteTodo(id);
         return ResponseEntity.noContent().build(); // 204 OK
     }
+
+    @PostMapping
+    public ResponseEntity<TodoDTO> createTask(@RequestBody TodoDTO dto) {
+        TodoDTO created = todoService.createTask(dto);
+        return ResponseEntity.ok(created);
+    }
 }

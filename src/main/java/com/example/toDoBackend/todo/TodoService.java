@@ -29,4 +29,10 @@ public class TodoService {
         }
         todoRepository.deleteById(id);
     }
+
+    public TodoDTO createTask(TodoDTO dto) {
+        Todo todo = mapper.fromDTO(dto);
+        Todo saved = todoRepository.save(todo);
+        return mapper.toDTO(saved);
+    }
 }
