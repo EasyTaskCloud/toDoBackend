@@ -1,9 +1,7 @@
 package com.example.toDoBackend.todo;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,5 +23,11 @@ public class TodoController {
     @GetMapping("/{userId}")
     public List<TodoDTO> getTodosByUserId(@PathVariable Long userId) {
         return todoService.getTodosByUserId(userId);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteTodo(@PathVariable Long id) {
+        todoService.deleteTodo(id);
+        return ResponseEntity.noContent().build(); // 204 OK
     }
 }

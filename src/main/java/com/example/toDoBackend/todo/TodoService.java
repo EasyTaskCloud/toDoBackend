@@ -22,4 +22,11 @@ public class TodoService {
     public List<TodoDTO> getTodosByUserId(Long id) {
         return todoRepository.findByBenutzerId(id).stream().map(mapper::toDTO).toList();
     }
+
+    public void deleteTodo(Long id) {
+        if (!todoRepository.existsById(id)) {
+            throw new RuntimeException("Todo not found");
+        }
+        todoRepository.deleteById(id);
+    }
 }
