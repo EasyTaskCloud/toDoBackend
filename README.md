@@ -1,0 +1,1 @@
+In dev soll man '--spring.profiles.active=dev' inder environment variable einsetzen.
